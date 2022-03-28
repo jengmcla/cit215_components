@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Components</title>
+</head>
+<style>
+    .hide {
+        display: none;
+    }
+</style>
+<body>
+
+<div id="app">
+
+    <input type="text" v-model="nameInput"/>
+
+    <input type="text" v-model="emailInput"/>
+
+    <p>
+        {{ message }}
+    </p>
+    <p>
+        {{ submit }}
+    </p>
+
+    <p
+            is="character-item"
+            v-for="(character, index) in characters"
+            v-bind:key="character.id"
+            v-bind:character="character"
+            v-on:hide="onHide(index)"
+    ></p>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
